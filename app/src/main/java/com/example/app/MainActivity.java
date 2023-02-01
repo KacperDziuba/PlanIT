@@ -17,11 +17,11 @@ public class MainActivity extends AppCompatActivity {
         Button button_cal = findViewById(R.id.button_cal);
         Button button_notes = findViewById(R.id.button_note);
         Button button_alarm = findViewById(R.id.button_alarm);
+        Button button_stopwatch = findViewById(R.id.button_stopwatch);
 
         button_cal.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                OpenCalendar();
+            public void onClick(View v) { OpenCalendar();
             }
         });
 
@@ -38,11 +38,18 @@ public class MainActivity extends AppCompatActivity {
                 OpenAlarm();
             }
         });
+
+        button_stopwatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenStopwatch();
+            }
+        });
     }
     public void openNotes() {
         Intent intent = new Intent(this, Notes.class);
         startActivity(intent);
-    };
+    }
 
     public void OpenCalendar() {
         Intent intent = new Intent(this, Calendar.class);
@@ -53,4 +60,11 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Alarm.class);
         startActivity(intent);
     }
+
+    public void OpenStopwatch() {
+        Intent intent = new Intent(this, Stopwatch.class);
+        startActivity(intent);
+    }
+
+
 }
