@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         Button button_notes = findViewById(R.id.button_note);
         Button button_alarm = findViewById(R.id.button_alarm);
         Button button_stopwatch = findViewById(R.id.button_stopwatch);
+        Button button_timer = findViewById(R.id.button_timer);
 
         button_cal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +46,14 @@ public class MainActivity extends AppCompatActivity {
                 OpenStopwatch();
             }
         });
+
+        button_timer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenTimer();
+            }
+
+        });
     }
     public void openNotes() {
         Intent intent = new Intent(this, Notes.class);
@@ -63,6 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void OpenStopwatch() {
         Intent intent = new Intent(this, Stopwatch.class);
+        startActivity(intent);
+    }
+
+    public void OpenTimer() {
+        Intent intent = new Intent(this, Timer .class);
         startActivity(intent);
     }
 
