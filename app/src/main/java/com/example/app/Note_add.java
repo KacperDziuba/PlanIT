@@ -89,9 +89,14 @@ public class Note_add extends AppCompatActivity {
             NoteDatabase db = new NoteDatabase(this);
             db.addNote(note);
             Toast.makeText(this, "Zapisano", Toast.LENGTH_SHORT).show();
-            onBackPressed();
+            goToMain();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void goToMain() {
+        Intent i = new Intent(this, Notes.class);
+        startActivity(i);
     }
 
     @Override
