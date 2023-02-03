@@ -28,9 +28,11 @@ public class Notes extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         NoteDatabase db = new NoteDatabase(this);
-
+        notes = db.getAllNotes();
         recyclerView = findViewById(R.id.listOfNotes);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new Adapter(this,notes);
+        recyclerView.setAdapter(adapter);
     }
 
     @Override
