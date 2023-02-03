@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,6 +22,7 @@ public class Note_add extends AppCompatActivity {
     Calendar c;
     String todaysdate;
     String currentTime;
+    NoteDatabase db = new NoteDatabase(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +60,6 @@ public class Note_add extends AppCompatActivity {
         c = Calendar.getInstance();
         todaysdate = c.get(Calendar.YEAR)+"/"+c.get(c.get(Calendar.MONTH)+1)+"/"+c.get(Calendar.DAY_OF_MONTH);
         currentTime = pad(c.get(Calendar.HOUR))+":"+pad(c.get(Calendar.MINUTE));
-
-        Log.d("calendar","Date and Time: " +  todaysdate +" and "+currentTime);
     }
 
     private String pad(int i) {
@@ -81,7 +79,9 @@ public class Note_add extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.delete){
-            Toast.makeText(this, "Nie zapisano", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Usunięto", Toast.LENGTH_SHORT).show();
+            Note note = new Note();
+            db.deleteNote(note.getId());
             onBackPressed();
         }
         if(item.getItemId() == R.id.save){

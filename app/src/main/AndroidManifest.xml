@@ -11,11 +11,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         tools:targetApi="31">
-        <activity android:name=".Stopwatch"
+        <activity
+            android:name=".Detail"
+            android:exported="false"
+            android:parentActivityName=".Notes"/>
+        <activity
+            android:name=".Stopwatch"
             android:exported="false" />
         <activity
             android:name=".Note_add"
-            android:exported="false" ></activity>
+            android:exported="false"
+            android:parentActivityName=".Notes"/>
         <activity
             android:name=".Alarm"
             android:exported="false" />
@@ -25,8 +31,9 @@
         <activity
             android:name=".Notes"
             android:exported="false" />
-        <activity android:name=".Timer"
-            android:exported="false"/>
+        <activity
+            android:name=".Timer"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -37,6 +44,5 @@
             </intent-filter>
         </activity>
     </application>
-
 
 </manifest>

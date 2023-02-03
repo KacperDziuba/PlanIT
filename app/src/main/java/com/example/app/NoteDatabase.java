@@ -59,7 +59,6 @@ public class NoteDatabase extends SQLiteOpenHelper {
         v.put(KEY_DATE, note.getDate());
         v.put(KEY_TIME, note.getTime());
 
-        // inserting data into db
         long ID = db.insert(TABLE_NAME, null, v);
         return ID;
     }
@@ -99,4 +98,23 @@ public class NoteDatabase extends SQLiteOpenHelper {
         return allNotes;
 
     }
+
+    public int editNote(Note note){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues c = new ContentValues();
+        c.put(KEY_TITLE,note.getTitle());
+        c.put(KEY_CONTENT,note.getContent());
+        c.put(KEY_DATE,note.getDate());
+        c.put(KEY_TIME,note.getTime());
+        return db.update(TABLE_NAME,c,KEY_ID+"=?",new String[]{String.valueOf(note.getId())});
+    }
+
+
+
+    void deleteNote(long id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_NAME,KEY_ID+"=?",new String[]{String.valueOf(id)});
+        db.close();
+    }
+
 }
