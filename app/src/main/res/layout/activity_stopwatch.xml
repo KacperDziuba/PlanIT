@@ -6,14 +6,17 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".Stopwatch">
+    tools:context=".Stopwatch"
+    android:background="@drawable/bg">>
 
     <Chronometer
 
         android:id="@+id/chronometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="60sp" />
+        android:textSize="60sp"
+        android:textColor="@color/black"
+        android:background="@drawable/radius"/>
 
     <Button
         android:layout_marginTop="100dp"
