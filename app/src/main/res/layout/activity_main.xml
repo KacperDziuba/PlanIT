@@ -4,36 +4,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity" >
+    android:background="@drawable/bg"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/button_cal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="54dp"
         android:text="Kalendarz"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.326" />
+        app:layout_constraintVertical_bias="0.191" />
 
     <Button
         android:id="@+id/button_note"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="54dp"
         android:text="Notatki"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_cal"
-        app:layout_constraintVertical_bias="0.082" />
+        app:layout_constraintVertical_bias="0.06" />
 
     <Button
         android:id="@+id/button_alarm"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="54dp"
         android:text="Budzik"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,24 +44,25 @@
 
     <Button
         android:id="@+id/button_stopwatch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="54dp"
         android:text="Stoper"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_alarm"
-        app:layout_constraintVertical_bias="0.089" />
+        app:layout_constraintVertical_bias="0.116" />
 
     <Button
         android:id="@+id/button_timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Timer"
+        android:layout_width="150dp"
+        android:layout_height="54dp"
+        android:text="Minutnik"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_stopwatch"
-        app:layout_constraintVertical_bias="0.155" />
+        app:layout_constraintVertical_bias="0.183" />
 </androidx.constraintlayout.widget.ConstraintLayout>
