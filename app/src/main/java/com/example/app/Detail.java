@@ -36,7 +36,7 @@ public class Detail extends AppCompatActivity {
         db = new NoteDatabase(this);
 
         note = db.getNote(id);
-        getSupportActionBar().setTitle(note.getTitle());
+        getSupportActionBar().setTitle("Edytuj notatkę");
         noteDetails = findViewById(R.id.editNoteDetails);
         noteTitle = findViewById(R.id.editNoteTitle);
         noteTitle.setText(note.getTitle());

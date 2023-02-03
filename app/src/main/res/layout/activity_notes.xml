@@ -11,10 +11,11 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_700"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/purple_700" />
+        app:subtitleTextColor="#FFFFFF" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/listOfNotes"

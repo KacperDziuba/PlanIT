@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -29,6 +31,7 @@ public class Notes extends AppCompatActivity {
         setSupportActionBar(toolbar);
         NoteDatabase db = new NoteDatabase(this);
         notes = db.getAllNotes();
+        getSupportActionBar().setTitle("");
         recyclerView = findViewById(R.id.listOfNotes);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         adapter = new Adapter(this,notes);
