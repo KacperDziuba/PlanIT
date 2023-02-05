@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -14,11 +16,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button_cal = findViewById(R.id.button_cal);
+
         Button button_notes = findViewById(R.id.button_note);
         Button button_alarm = findViewById(R.id.button_alarm);
         Button button_stopwatch = findViewById(R.id.button_stopwatch);
         Button button_timer = findViewById(R.id.button_timer);
+        Button button_cal = findViewById(R.id.button_cal);
 
         button_cal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void OpenCalendar() {
-        Intent intent = new Intent(this, Calendar.class);
+        Intent intent = new Intent(this, Calendar_menu.class);
         startActivity(intent);
     }
 
@@ -79,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Timer .class);
         startActivity(intent);
     }
+
+
 
 
 }

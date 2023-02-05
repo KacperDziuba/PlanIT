@@ -26,8 +26,11 @@
             android:name=".Alarm"
             android:exported="false" />
         <activity
-            android:name=".Calendar"
+            android:name=".Calendar_menu"
             android:exported="false" />
+        <activity
+            android:name=".calendar"
+            android:exported="false"/>
         <activity
             android:name=".Notes"
             android:exported="false" />
