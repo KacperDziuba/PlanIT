@@ -18,7 +18,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     private LayoutInflater inflater;
     private List<Note> notes;
 
-    Note note = new Note();
     Adapter(Context context,List<Note> notes){
         this.inflater = LayoutInflater.from(context);
         this.notes = notes;

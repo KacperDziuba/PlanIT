@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void OpenAlarm() {
-        Intent intent = new Intent(this, Alarm.class);
+        Intent intent = new Intent(this, AlarmList.class);
         startActivity(intent);
     }
 

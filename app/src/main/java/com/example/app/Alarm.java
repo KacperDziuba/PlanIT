@@ -1,14 +1,21 @@
 package com.example.app;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 
-import android.os.Bundle;
+public class Alarm extends BroadcastReceiver {
 
-public class Alarm extends AppCompatActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alarm);
+    public void onReceive(Context context, Intent intent) {
+        Uri notification_Uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
+        Ringtone ringtone = RingtoneManager.getRingtone(context, notification_Uri);
+        ringtone.play();
     }
+
+
 }

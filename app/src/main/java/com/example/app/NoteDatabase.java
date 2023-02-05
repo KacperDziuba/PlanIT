@@ -13,8 +13,8 @@ import java.util.List;
 public class NoteDatabase extends SQLiteOpenHelper {
     // declare require values
     private static final int DATABASE_VERSION = 2;
-    private static final String DATABASE_NAME = "SimpleDB";
-    private static final String TABLE_NAME = "SimpleTable";
+    private static final String DATABASE_NAME = "NoteDB";
+    private static final String TABLE_NAME = "NotesTable";
 
     public NoteDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -108,8 +108,6 @@ public class NoteDatabase extends SQLiteOpenHelper {
         c.put(KEY_TIME,note.getTime());
         return db.update(TABLE_NAME,c,KEY_ID+"=?",new String[]{String.valueOf(note.getId())});
     }
-
-
 
     void deleteNote(long id){
         SQLiteDatabase db = this.getWritableDatabase();
