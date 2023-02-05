@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-1dp">
 
     <Button
         android:id="@+id/button_cal"
@@ -17,7 +19,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.193" />
 
     <Button
         android:id="@+id/button_note"
@@ -29,7 +31,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_cal"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintVertical_bias="0.028" />
 
     <Button
         android:id="@+id/button_alarm"
@@ -38,9 +40,10 @@
         android:text="Budzik"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_note"
-        app:layout_constraintVertical_bias="0.083" />
+        app:layout_constraintVertical_bias="0.036" />
 
     <Button
         android:id="@+id/button_stopwatch"
@@ -52,7 +55,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_alarm"
-        app:layout_constraintVertical_bias="0.116" />
+        app:layout_constraintVertical_bias="0.043" />
 
     <Button
         android:id="@+id/button_timer"
@@ -64,5 +67,5 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_stopwatch"
-        app:layout_constraintVertical_bias="0.183" />
+        app:layout_constraintVertical_bias="0.055" />
 </androidx.constraintlayout.widget.ConstraintLayout>
