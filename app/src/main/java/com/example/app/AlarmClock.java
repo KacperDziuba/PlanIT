@@ -7,7 +7,9 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.icu.util.Calendar;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.provider.Settings;
@@ -49,8 +51,16 @@ public class AlarmClock extends AppCompatActivity implements View.OnClickListene
     private void Alarm_set(long timeInMillis) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this,Alarm.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,0,intent,0);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,timeInMillis,AlarmManager.INTERVAL_DAY,pendingIntent);
+        intent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
+        intent.addFlags(Intent.FLAG_RECEIVER_FOREGROUND);
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,(int)cal.getTimeInMillis(),intent,0);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.S){
+            alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP,cal.getTimeInMillis(),pendingIntent);
+        } else {
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP,cal.getTimeInMillis(),pendingIntent);
+        }
+
         Toast.makeText(this,"Ustawiono alarm",Toast.LENGTH_SHORT).show();
     }
 

@@ -87,9 +87,15 @@ public class Note_add extends AppCompatActivity {
         if(item.getItemId() == R.id.save){
             Note note = new Note(noteTitle.getText().toString(),noteDetails.getText().toString(),todaysdate,currentTime);
             NoteDatabase db = new NoteDatabase(this);
-            db.addNote(note);
-            Toast.makeText(this, "Zapisano", Toast.LENGTH_SHORT).show();
-            goToMain();
+            if(note.getTitle().isEmpty()) {
+                Toast.makeText(this, "Nie zapisano", Toast.LENGTH_SHORT).show();
+            } else {
+                db.addNote(note);
+                Intent intent = new Intent(this, Notes.class);
+                startActivity(intent);
+                Toast.makeText(this, "Zapisano", Toast.LENGTH_SHORT).show();
+            }
+
         }
         return super.onOptionsItemSelected(item);
     }
